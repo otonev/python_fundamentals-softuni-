@@ -13,7 +13,7 @@ if __name__ == "__main__":
 
     key_materials = {
         "shards": 0,
-        "fragments":0,
+        "fragments": 0,
         "motes": 0
     }
     legendary_items = {
@@ -28,7 +28,7 @@ if __name__ == "__main__":
         for i in range(0, len(command), 2):
             quantity = int(command[i])
             material = command[i+1].lower()
-            if material != "shards" and material != 'fragments' and material != 'motes':
+            if material not in key_materials:
                 append_dict(material, junk, quantity)
             else:
                 key_materials[material] += quantity
